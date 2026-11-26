@@ -1,0 +1,61 @@
+### git worktree list
+D:/Users/User/Desktop/ticketrush-final-exercise  0dfa507 [main]
+D:/Users/User/Desktop/hotfix-price               41added [hotfix/price]
+D:/Users/User/Desktop/review                     d1d8fcb [review/noa-refund]
+D:/Users/User/Desktop/ticketrush-early-access    d80e791 [feature/early-access]
+D:/Users/User/Desktop/waitlist                   78ed1d4 [feature/waitlist]
+
+### git branch -a -vv
++ feature/early-access      d80e791 (D:/Users/User/Desktop/ticketrush-early-access) feat: raise club-member ticket quota from 4 to 6
++ feature/waitlist          78ed1d4 (D:/Users/User/Desktop/waitlist) feat: add joinWaitlist for sold-out events
++ hotfix/price              41added (D:/Users/User/Desktop/hotfix-price) Revert "perf: faster price formatting"
+* main                      0dfa507 [origin/main: ahead 12] Merge branch 'feature/waitlist'
++ review/noa-refund         d1d8fcb (D:/Users/User/Desktop/review) [origin/noa/refund: ahead 1] docs: review of noa/refund – refund includes service fee, tests fail
+  remotes/origin/HEAD       -> origin/main
+  remotes/origin/dana/promo d4b1e35 test: add student discount tests
+  remotes/origin/main       6e5b25d feat: friendlier message for empty quantity
+  remotes/origin/noa/refund f7e8785 test: refund tests
+  remotes/origin/ruth/fixes fee9f58 wip: try new fonts
+
+### git log --graph --oneline --all -n 80
+*   0dfa507 (HEAD -> main, tag: v1.1) Merge branch 'feature/waitlist'
+|\  
+| * 78ed1d4 (feature/waitlist) feat: add joinWaitlist for sold-out events
+* |   678e2d0 Merge branch 'feature/early-access' (club members + student promo)
+|\ \  
+| * | d80e791 (feature/early-access) feat: raise club-member ticket quota from 4 to 6
+| * | 0fe29a0 fix: restore club-member pricing after merging student promo
+| * |   c054011 feat: merge with dana
+| |\ \  
+| * | | ff9d9e2 feat: early access pricing for club members
+| | |/  
+| |/|   
+* | | 57d5eb6 security: stop tracking js/config.js (payment API key)
+* | | 367c8bb fix: correct concert date in events.js
+* | | 41added (hotfix/price) Revert "perf: faster price formatting"
+| |/  
+|/|   
+* | d4b1e35 (origin/dana/promo) test: add student discount tests
+* | 0841085 feat: student discount (15%)
+|/  
+| * d1d8fcb (review/noa-refund) docs: review of noa/refund – refund includes service fee, tests fail
+| * f7e8785 (origin/noa/refund) test: refund tests
+| * 61bfedd feat: refund calculation for cancelled orders
+|/  
+| * fee9f58 (origin/ruth/fixes) wip: try new fonts
+| * 72063d7 debug: dump state to console
+| * 20cd6a9 WIP: try removing ticket limits
+| * 8284d98 fix: correct concert date in events.js
+| * 339324e WIP: new checkout flow (do not merge)
+|/  
+* 6e5b25d (origin/main, origin/HEAD) feat: friendlier message for empty quantity
+* 9119fe2 fix: typo in hero heading
+* a61f4ad feat: add footer with links
+* 73924c4 perf: faster price formatting
+* 03bd4dd docs: update artist lineup text
+* c44fbf8 feat: add early-access promo banner
+* 62f48b5 feat: purchase page UI
+* f4c58bc feat: payment provider config
+* 2cc7e97 feat: event details data
+* 8a944f6 feat: ticket price calculation with tests
+* ed1b1e9 Initial commit: project skeleton and exercise tooling

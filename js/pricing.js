@@ -10,10 +10,18 @@ function maxTickets(isMember) {
   return isMember ? MEMBER_MAX_TICKETS : MAX_TICKETS;
 }
 
-function calcTotal(qty) {
-  return qty * (TICKET_PRICE + SERVICE_FEE);
+// ההנחות לא מצטברות: מקבלים רק את ההנחה הגדולה. עמלת השירות אף פעם לא מוזלת.
+function calcTotal(qty, isMember, isStudent) {
+  if (qty < 1 || qty > maxTickets(isMember)) return null;
+
+  const discount = Math.max(isMember ? MEMBER_DISCOUNT : 0, isStudent ? STUDENT_DISCOUNT : 0);
+  const ticketPrice = TICKET_PRICE * (1 - discount);
+  return qty * (ticketPrice + SERVICE_FEE);
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { TICKET_PRICE, SERVICE_FEE, MAX_TICKETS, maxTickets, calcTotal };
+  module.exports = {
+    TICKET_PRICE, SERVICE_FEE, MAX_TICKETS, MEMBER_DISCOUNT, MEMBER_MAX_TICKETS, STUDENT_DISCOUNT,
+    maxTickets, calcTotal,
+  };
 }
